@@ -1,36 +1,28 @@
-DROP DATABASE IF EXISTS tracker_db;
-CREATE DATABASE tracker_db;
+DROP DATABASE IF EXISTS employees;
+CREATE DATABASE employees;
 
-USE tracker_db;
+USE employees;
 
-CREATE TABLE department(
-  Id INT AUTO_INCREMENT NOT NULL,
-  department_name VARCHAR(30) NOT NULL,
-  PRIMARY KEY (id)
+CREATE TABLE department (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) UNIQUE NOT NULL
 );
 
-CREATE TABLE employee_role(
-  Id INT AUTO_INCREMENT NOT NULL,
-  title VARCHAR(30) NULL,
-  salary DECIMAL(10,2) NULL,
-  department_id INT,
-  PRIMARY KEY (role_id)
-  
+CREATE TABLE role (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(30) UNIQUE NOT NULL,
+  salary DECIMAL UNSIGNED NOT NULL,
+  department_id INT UNSIGNED NOT NULL,
+
+  CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
 );
 
-Alter table employee_role
-Add Foreign Key (id) references department(id);
-
-CREATE TABLE employee(
-  Id INT AUTO_INCREMENT NOT NULL,
+CREATE TABLE employee (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
-  role_id INT NOT NULL,
-  manager_id INT NULL,
-  PRIMARY KEY (employee_id),
-  FOREIGN KEY (role_id) REFERENCES employee_id (role_id),
-  FOREIGN KEY (manager_id) REFERENCES employee (employee_id)
+  role_id INT UNSIGNED NOT NULL,
+  CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE,
+  manager_id INT UNSIGNED,
+  CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
-
-ALTER TABLE employee
-ADD FOREIGN KEY (manager_id) employee(Id);
