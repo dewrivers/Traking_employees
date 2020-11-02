@@ -1,4 +1,4 @@
-// view all employees in
+// View All employees
 
 function view_employee(connection, start){
      connection.query("SELECT * FROM employee", (err, results) => {

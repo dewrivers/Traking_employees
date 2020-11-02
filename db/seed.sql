@@ -1,16 +1,16 @@
-INSERT INTO department (department) VALUES ('Engineering');
-INSERT INTO department (department) VALUES ('Legal');
-INSERT INTO department (department) VALUES ('Finance');
-INSERT INTO department (department) VALUES ('Sales');
+INSERT INTO department (name) VALUES ('Engineering');
+INSERT INTO department (name) VALUES ('Legal');
+INSERT INTO department (name) VALUES ('Finance');
+INSERT INTO department (name) VALUES ('Sales');
 
 
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Software Engineer', 130000, 1);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Lead Engineer', 150000, 1);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Sales Manager', 110000, 2);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Sales Person', 90000, 2);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Lawyer', 350000, 3);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Legal Team Leader', 250000, 3);
-INSERT INTO employee_role (title, salary, department_id) VALUES ('Accountant', 150000, 4);
+INSERT INTO role (title, salary, department_id) VALUES ('Software Engineer', 130000, 1);
+INSERT INTO role (title, salary, department_id) VALUES ('Lead Engineer', 150000, 1);
+INSERT INTO role (title, salary, department_id) VALUES ('Sales Manager', 110000, 2);
+INSERT INTO role (title, salary, department_id) VALUES ('Sales Person', 90000, 2);
+INSERT INTO role (title, salary, department_id) VALUES ('Lawyer', 350000, 3);
+INSERT INTO role (title, salary, department_id) VALUES ('Legal Team Leader', 250000, 3);
+INSERT INTO role (title, salary, department_id) VALUES ('Accountant', 150000, 4);
 
 
                           

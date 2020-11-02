@@ -37,7 +37,7 @@ function updateRole(connection, start){
                     ])
                     connection.query('UPDATE employee SET role_id = ? WHERE id = ?', [answer.role, answer.employee], (err, results)=>{
                         if (err) throw err;
-                        console.log(results+ 'employee role succesfully updated!\n');
+                        console.log(results+ 'Employee role succesfully updated!\n');
                         //console.log(results.affected_rows + 'employee inserted succesfully!\n');
                         start();
                     })

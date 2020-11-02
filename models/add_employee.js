@@ -47,7 +47,7 @@ function add_employee(connection, start){
                     [answer.first_name, answer.last_name, roleId],
                     (err, results)=>{
                         if(err) throw err;
-                        console.log(results.affectedRow + 'employee inserted succesfully!\n');
+                        console.log(results.affectedRow + 'employee inserted succesfully!!\n');
                         start();
                     }
                    )

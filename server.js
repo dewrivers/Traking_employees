@@ -1,6 +1,6 @@
-const mysql = require('mysql');
+//const mysql = require('mysql');
 const inquirer = require("inquirer");
-//const connection = require("./db/connection");
+const connection = require("./db/connection.js");
 const add_employee = require('./models/add_employee');
 const add_role = require('./models/add_role');
 const employeeByDepartment = require('./models/employeeByDepartment');
@@ -9,14 +9,6 @@ const view_employee = require('./models/view_employee');
 const view_role = require('./models/view_role');
 const remove_employee = require('./models/remove_employee');
 
-// create the connection information for the sql database
-const connection = mysql.createConnection({
- host: 'localhost',
- port: 3306,
- user: 'root',
- password: 'password777',
- database: 'employees'
-});
 //connect to the mysql server and sql database
 connection.connect(function(err) {
     if (err) throw err;
@@ -50,7 +42,8 @@ connection.connect(function(err) {
           add_employee(connection, start);
       } else if (answer.main === "Update Employee Role") {
           updateRole(connection, start);
-      } else if (answer.main === "View All Roles") {
+      } 
+      else if (answer.main === "View all Roles") {
           view_role(connection, start);
       } else if (answer.main === "Add New Role") {
           add_role(connection, start);

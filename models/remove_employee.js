@@ -15,13 +15,11 @@ const inquirer = require('inquirer');
         }    
       ])
       .then(function(answer) {    
-       connection.query("SELECT * FROM employee WHERE ?", function(err, results) {
-              if (err) throw err; 
-              console.log(results);           
+                
       connection.query(
         "DELETE FROM employee WHERE ?",
               {          
-                 first_name: firstName      
+                 first_name: answer.first_name      
               },
             function(err) {
               if (err) throw err;
@@ -29,8 +27,7 @@ const inquirer = require('inquirer');
                start();
                 
               });
-           });
-        })    
+           });  
       };
     
 

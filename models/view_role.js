@@ -1,5 +1,3 @@
-//const db = require("./db");
-// view all the roles in
 
 // View All Roles
 function view_role(connection, start) {
