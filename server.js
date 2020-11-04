@@ -1,6 +1,6 @@
 //const mysql = require('mysql');
 const inquirer = require("inquirer");
-const connection = require("./db/connection.js");
+const connection = require("./db/connection");
 const add_employee = require('./models/add_employee');
 const add_role = require('./models/add_role');
 const employeeByDepartment = require('./models/employeeByDepartment');

@@ -11,7 +11,7 @@ function updateRole(connection, start){
         }
             connection.query('Select * From role', (err, resRole) => {
                 for (let i = 0; i < res.length; i++){
-                    listOfRoles.push({name: resRole[i].title, value: resRole[i].id })
+                    listOfRoles.push({name: res[i].title, value: res[i].id })
 
                     if (err) throw err;
                 }
@@ -37,7 +37,7 @@ function updateRole(connection, start){
                     ])
                     connection.query('UPDATE employee SET role_id = ? WHERE id = ?', [answer.role, answer.employee], (err, results)=>{
                         if (err) throw err;
-                        console.log(results+ 'Employee role succesfully updated!\n');
+                        console.log('Employee role succesfully updated!\n');
                         //console.log(results.affected_rows + 'employee inserted succesfully!\n');
                         start();
                     })
