@@ -35,7 +35,6 @@ Start running the command-line **node server.js** Then answer the questions on:
   
 ##  Video demonstrating the entirety of the app's functionality 
 
-
-![Employee Tracker](https://drive.google.com/file/d/1pK0fjorjHktMUrPCalGB5AMmMKztqdzS/view)
+https://drive.google.com/file/d/1pK0fjorjHktMUrPCalGB5AMmMKztqdzS/view
 
 
